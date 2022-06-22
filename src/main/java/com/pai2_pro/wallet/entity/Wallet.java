@@ -27,7 +27,7 @@ public class Wallet {
     private String description;
     @Min(1)
     @Max(3)
-    private Integer priority; //1=High; 2=Medium; 3=Low
+    private Integer priority;
     private Double currentBalance;
     @PrePersist
     public void setBalance(){ this.currentBalance = (double) 0; }

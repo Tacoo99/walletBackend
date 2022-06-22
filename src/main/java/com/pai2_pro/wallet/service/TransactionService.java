@@ -31,7 +31,7 @@ public class TransactionService {
                 return transaction.get();
             }
         }
-        throw new WalletException("Transakcja o ID "+id+" nie istnieje!");
+        throw new WalletException("Transakcja z ID "+id+" nie istnieje!");
     }
     public Transaction createOrUpdate(Long walletId, Transaction transaction){
         Optional<Wallet> wallet = walletRepository.findById(walletId);
@@ -51,6 +51,6 @@ public class TransactionService {
                 return true;
             }
         }
-        throw new WalletException("Transakcja o ID "+id+" nie istnieje!");
+        throw new WalletException("Transakcja z ID "+id+" nie istnieje!");
     }
 }

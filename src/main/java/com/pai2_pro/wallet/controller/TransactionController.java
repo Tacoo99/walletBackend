@@ -1,8 +1,10 @@
 package com.pai2_pro.wallet.controller;
 
 import com.pai2_pro.wallet.entity.Transaction;
+import com.pai2_pro.wallet.entity.Wallet;
 import com.pai2_pro.wallet.service.TransactionService;
 import com.pai2_pro.wallet.service.ValidationErrorService;
+import com.pai2_pro.wallet.service.WalletService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

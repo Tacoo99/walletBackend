@@ -1,7 +1,7 @@
 package com.pai2_pro.wallet.repository;
 
-import com.pai2_pro.wallet.entity.Wallet;
 import com.pai2_pro.wallet.entity.Transaction;
+import com.pai2_pro.wallet.entity.Wallet;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

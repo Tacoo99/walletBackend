@@ -9,7 +9,9 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
@@ -26,14 +28,18 @@ public class Transaction {
     private String description;
     @Min(1)
     @Max(3)
-    private int type;
+    private int type;//1 for Income, 2 for expense
     @JsonFormat(pattern = "yyyy-mm-dd")
-    private Date transactionDate;
+    private String transactionDate;
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "wallet_id",nullable = false)
+    @JoinColumn(name = "wallet_id", nullable = false)
     @JsonIgnore
     private Wallet wallet;
 
     @PrePersist
-    public void setTransactionDate(){ this.transactionDate = new Date(); }
+    public void setTransactionDate() {
+        Date currentDate = new Date();
+        SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        this.transactionDate = ft.format(currentDate);
+    }
 }
